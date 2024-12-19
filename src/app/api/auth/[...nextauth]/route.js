@@ -1,11 +1,16 @@
 import { connectMongoDB } from "@/lib/connection";
 import User from "@/models/userschema";
 import NextAuth from "next-auth/next";
+import Google from "next-auth/providers/google"
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 
 export const authOptions = {
   providers: [
+    Google({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+    }),
     CredentialsProvider({
       name: "credentials",
       credentials: {},

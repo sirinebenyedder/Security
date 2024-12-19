@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -61,6 +62,15 @@ export default function LoginForm() {
           <Link className="text-sm mt-3 text-right" href={"/register"}>
             Don't have an account? <span className="underline">Register</span>
           </Link>
+
+          <div className="flex justify-center items-center">
+            <div className="w-[40%] h-[1px] bg-zinc-400 "></div>
+            <p className=" text-zinc-400 mx-1 mb-1">or</p>
+            <div className="w-[40%] h-[1px] bg-zinc-400 "></div>
+          </div>
+          <button onClick={() => signIn("google")} className="bg-blue-500 text-white font-bold cursor-pointer px-6 py-2 flex justify-center items-center gap-2">
+            <FcGoogle size={27} /> Continue with Google
+          </button>
         </form>
       </div>
     </div>
