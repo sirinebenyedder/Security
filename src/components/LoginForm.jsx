@@ -68,7 +68,7 @@ export default function LoginForm() {
             <p className=" text-zinc-400 mx-1 mb-1">or</p>
             <div className="w-[40%] h-[1px] bg-zinc-400 "></div>
           </div>
-          <button onClick={() => signIn("google")} className="bg-blue-500 text-white font-bold cursor-pointer px-6 py-2 flex justify-center items-center gap-2">
+          <button onClick={() => signIn("google")} className="bg-blue-500 text-white font-bold cursor-pointer px-6 py-2 flex justify-center items-center gap-2 mb-4">
             <FcGoogle size={27} /> Continue with Google
           </button>
         </form>
